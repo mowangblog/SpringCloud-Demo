@@ -2,21 +2,19 @@ package top.mowang.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import springfox.documentation.oas.annotations.EnableOpenApi;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * SpringCloud-Demo
  *
  * @author : Xuan Li
  * @website : https://mowangblog.top
- * @date : 2021/10/30 12:04
+ * @date : 2021/10/30 20:30
  **/
 @SpringBootApplication
-@EnableOpenApi
-@EnableEurekaClient
-public class OrderMainApplication {
+@EnableEurekaServer
+public class EurekaServerMainApplication {
     public static void main(String[] args) {
-        SpringApplication.run(OrderMainApplication.class,args);
+        SpringApplication.run(EurekaServerMainApplication.class,args);
     }
 }

@@ -3,6 +3,7 @@ package top.mowang.cloud;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import springfox.documentation.oas.annotations.EnableOpenApi;
 
 /**
@@ -15,6 +16,7 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 @SpringBootApplication
 @EnableOpenApi
 @MapperScan("top.mowang.cloud.mapper")
+@EnableEurekaClient
 public class PaymentMainApplication {
     public static void main(String[] args) {
         SpringApplication.run(PaymentMainApplication.class,args);

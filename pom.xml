@@ -11,6 +11,8 @@
         <module>cloud-provider-payment</module>
         <module>cloud-consumer-order</module>
         <module>cloud-api-commons</module>
+        <module>cloud-eureka-server</module>
+        <module>cloud-eureka-server-two</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->

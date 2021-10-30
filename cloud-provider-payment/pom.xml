@@ -17,6 +17,11 @@
     </properties>
 
     <dependencies>
+        <!--eureka-client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
         <!--导入公共类-->
         <dependency>
             <groupId>top.mowang</groupId>
