@@ -1,0 +1,34 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: cloud-provider-payment
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud?serverTimezone=UTC&CharacterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: lixuan
+    username: root
+    druid:
+      aop-patterns: top.mowang.*  #监控SpringBean
+      filters: stat,wall     # 底层开启功能，stat（sql监控），wall（防火墙）
+      stat-view-servlet: # 配置监控页功能
+        enabled: true
+        login-username: admin
+        login-password: admin
+        resetEnable: false
+      web-stat-filter: # 监控web
+        enabled: true
+        urlPattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      filter:
+        stat: # 对上面filters里面的stat的详细配置
+          slow-sql-millis: 1000
+          logSlowSql: true
+          enabled: true
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
