@@ -3,12 +3,18 @@ package top.mowang.cloud.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 import top.mowang.cloud.pojo.CommonResult;
 import top.mowang.cloud.pojo.Payment;
 import top.mowang.cloud.service.IPaymentService;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -23,6 +29,9 @@ import top.mowang.cloud.service.IPaymentService;
 public class PaymentController {
     @Autowired
     IPaymentService paymentService;
+
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     @Value("${server.port}")
     private String serverPort;
@@ -67,6 +76,21 @@ public class PaymentController {
         }
     }
 
+    @GetMapping("/payment/discovery")
+    public Object discovery(){
+        List<String> services = discoveryClient.getServices();
+        for (String service : services) {
+            System.out.println(service);
+        }
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PROVIDER-PAYMENT");
+        for (ServiceInstance instance : instances) {
+            System.out.println(instance.getServiceId());
+            System.out.println(instance.getHost());
+            System.out.println(instance.getPort());
+            System.out.println(instance.getUri());
+        }
+        return discoveryClient;
+    }
 
 }
 
