@@ -52,5 +52,17 @@ public class PaymentController {
         }
     }
 
+    @PutMapping("/payment")
+    public CommonResult<Object> paymentPut(Payment payment) {
+        log.info("修改数据"+payment.toString());
+        boolean save = paymentService.updateById(payment);
+        if (save) {
+            return new CommonResult<Object>(200, "success");
+        } else {
+            return new CommonResult<Object>(500, "fail");
+        }
+    }
+
+
 }
 
