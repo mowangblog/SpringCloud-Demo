@@ -1,8 +1,8 @@
 server:
-  port: 7001
+  port: 7002
 eureka:
   instance:
-    hostname: 127.0.0.1:7002 #eureka服务端的实例名称
+    hostname: 127.0.0.1:7001 #eureka服务端的实例名称
   client:
     #false表示不向注册中心注册自己。
     register-with-eureka: false

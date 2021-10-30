@@ -15,10 +15,12 @@ import javax.annotation.Resource;
  * @website : https://mowangblog.top
  * @date : 2021/10/30 12:06
  **/
+@SuppressWarnings("all")
 @RestController
 @Slf4j
 public class OrderController {
-    private static final String PAY_URL = "http://localhost:8001";
+//    private static final String PAY_URL = "http://localhost:8001";
+    private static final String PAY_URL = "http://CLOUD-PROVIDER-PAYMENT";
 
     @Resource
     private RestTemplate restTemplate;
