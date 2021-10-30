@@ -42,11 +42,13 @@ public class PaymentController {
     }
 
     @PostMapping("/payment")
-    public CommonResult<Object> payment(Payment payment) {
+    public CommonResult<Object> payment(@RequestBody Payment payment) {
         log.info("插入数据"+payment.toString());
         boolean save = paymentService.save(payment);
         if (save) {
-            return new CommonResult<Object>(200, "success");
+            CommonResult<Object> success = new CommonResult<>(200, "success,插入数据成功");
+            success.setData(payment);
+            return success;
         } else {
             return new CommonResult<Object>(500, "fail");
         }

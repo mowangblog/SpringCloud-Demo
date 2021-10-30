@@ -17,6 +17,12 @@
     </properties>
 
     <dependencies>
+        <!--导入公共类-->
+        <dependency>
+            <groupId>top.mowang</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!--注意！！当前包未传递依赖 mp 包，需要自己引入-->
         <dependency>
             <groupId>com.baomidou</groupId>
