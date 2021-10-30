@@ -14,6 +14,8 @@
         <module>cloud-eureka-server</module>
         <module>cloud-eureka-server-two</module>
         <module>cloud-provider-payment-two</module>
+        <module>cloud-provider-payment-zookeeper</module>
+        <module>cloud-consumer-order-zookeeper</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->
