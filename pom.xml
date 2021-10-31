@@ -19,6 +19,10 @@
         <module>cloud-provider-payment-consul</module>
         <module>cloud-consumer-order-consul</module>
         <module>cloud-consumer-order-feign</module>
+        <module>cloud-provider-payment-hystrix</module>
+        <module>cloud-consumer-order--feign-hystrix</module>
+        <module>cloud-consumer-order‘-feign-hystrix</module>
+        <module>cloud-consumer-order-feign-hystrix</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->
