@@ -15,7 +15,8 @@ import top.mowang.cloud.pojo.Payment;
  * @date : 2021/10/31 16:36
  **/
 @Component
-@FeignClient(value = "cloud-provider-hystrix-payment")
+@FeignClient(value = "cloud-provider-hystrix-payment",//
+        fallback = PaymentFallbackService.class)//指定该服务的服务降级类
 @SuppressWarnings("all")
 public interface PaymentHystrixService {
 
