@@ -16,6 +16,7 @@
         <module>cloud-provider-payment-two</module>
         <module>cloud-provider-payment-zookeeper</module>
         <module>cloud-consumer-order-zookeeper</module>
+        <module>cloud-provider-payment-consul</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->
