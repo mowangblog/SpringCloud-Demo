@@ -6,7 +6,6 @@ spring:
   cloud:
     config:
       server:
-
         git:
 #          skipSslValidation: true
           uri: git@github.com:mowangblog/SpringCloud-Config.git #GitHub上面的git仓库名字
