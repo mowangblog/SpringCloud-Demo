@@ -26,6 +26,9 @@
         <module>cloud-config-center</module>
         <module>cloud-config-client</module>
         <module>cloud-config-client-bus</module>
+        <module>cloud-stream-rabbitmq-provider</module>
+        <module>cloud-stream-rabbitmq-consumer</module>
+        <module>cloud-stream-rabbitmq-consumer-two</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->
