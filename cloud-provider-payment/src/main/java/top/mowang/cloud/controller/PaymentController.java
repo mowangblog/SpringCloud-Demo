@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
  */
 @RestController
 @Slf4j
+@SuppressWarnings("all")
 public class PaymentController {
     @Autowired
     IPaymentService paymentService;
@@ -110,5 +111,11 @@ public class PaymentController {
         }
         return serverPort;
     }
+
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin() {
+        return "hi ,i'am paymentzipkin server fall back，welcome to here, O(∩_∩)O哈哈~";
+    }
+
 }
 
