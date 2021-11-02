@@ -29,6 +29,8 @@
         <module>cloud-stream-rabbitmq-provider</module>
         <module>cloud-stream-rabbitmq-consumer</module>
         <module>cloud-stream-rabbitmq-consumer-two</module>
+        <module>cloudalibaba-provider-payment</module>
+        <module>cloudalibaba-provider-payment-two</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->
