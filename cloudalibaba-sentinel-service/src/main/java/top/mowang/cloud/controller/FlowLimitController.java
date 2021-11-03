@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
  **/
 @RestController
 @Slf4j
+@SuppressWarnings("all")
 public class FlowLimitController {
     @GetMapping("/testA")
     public String testA() {
@@ -51,6 +52,19 @@ public class FlowLimitController {
         log.info("testE 测试异常数");
         int age = 10/0;
         return "------testE 测试异常数";
+    }
+
+    @GetMapping("/testHotKey")
+    @SentinelResource(value = "testHotKey",blockHandler/*兜底方法*/ = "deal_testHotKey")
+    public String testHotKey(@RequestParam(value = "p1",required = false) String p1,
+                             @RequestParam(value = "p2",required = false) String p2) {
+        //int age = 10/0;
+        return "------testHotKey，p1："+p1+"p2："+p2;
+    }
+
+    /*兜底方法*/
+    public String deal_testHotKey (String p1, String p2, BlockException exception) {
+        return "------deal_testHotKey,o(╥﹏╥)o，p1："+p1+"p2："+p2;  //sentinel系统默认的提示：Blocked by Sentinel (flow limiting)
     }
 
 }
