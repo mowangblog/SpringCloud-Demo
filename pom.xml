@@ -33,6 +33,7 @@
         <module>cloudalibaba-provider-payment-two</module>
         <module>cloudalibaba-consumer-nacos-order</module>
         <module>cloudalibaba-config-nacos-client</module>
+        <module>cloudalibaba-sentinel-service</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->
