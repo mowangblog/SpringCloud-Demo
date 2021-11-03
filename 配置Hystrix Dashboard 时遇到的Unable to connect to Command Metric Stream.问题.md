@@ -15,7 +15,7 @@
 Proxy opening connection to: http://localhost:8001/hystrix.stream
 ```
 
-查找研究后发现原来是springcloud升级后的坑，ServletRegistrationBean因为springBoot的默认路径不是"/hystrix.stream"，所以直接打开http://localhost:8001/hystrix.stream也是报错的
+查找研究并经过周阳老师的讲解后发现原来是springcloud升级后的坑，ServletRegistrationBean因为springBoot的默认路径不是"/hystrix.stream"，所以直接打开http://localhost:8001/hystrix.stream也是报错的
 
 ![image-20211101134723714](https://res.mowangblog.top/img/11/01/image-20211101134723714.png)
 

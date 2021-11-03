@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 /**
  * SpringCloud-Demo
@@ -29,5 +30,28 @@ public class FlowLimitController {
         log.info(Thread.currentThread().getName()+"\t"+"...testB");
         return "------testB";
     }
+
+    @GetMapping("/testD")
+    public String testD() {
+//        try {
+//            TimeUnit.SECONDS.sleep(1);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        if (new Random().nextInt(10)>=5) {
+            int i = 10/0;
+        }
+        log.info("testD 测试RT");
+        return "testD 测试RT";
+    }
+
+    @GetMapping("/testE")
+    public String testE()
+    {
+        log.info("testE 测试异常数");
+        int age = 10/0;
+        return "------testE 测试异常数";
+    }
+
 }
 
