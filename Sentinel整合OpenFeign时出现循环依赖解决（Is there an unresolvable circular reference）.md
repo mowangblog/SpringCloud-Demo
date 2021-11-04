@@ -10,7 +10,7 @@
 Caused by: org.springframework.beans.factory.BeanCurrentlyInCreationException:Error creating bean with name 'top.mowang.cloud.service.PaymentService': Requested bean is currently in creation: Is there an unresolvable circular reference?
 ```
 
-## 我的环境
+## 环境信息
 
 Spring Cloud和Spring Cloud Alibaba版本信息：
 
