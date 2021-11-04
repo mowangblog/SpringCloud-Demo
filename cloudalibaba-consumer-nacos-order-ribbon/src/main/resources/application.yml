@@ -22,4 +22,4 @@ service-url:
 # 激活Sentinel对Feign的支持
 feign:
   sentinel:
-    enabled: false
+    enabled: true
