@@ -34,6 +34,10 @@
         <module>cloudalibaba-consumer-nacos-order</module>
         <module>cloudalibaba-config-nacos-client</module>
         <module>cloudalibaba-sentinel-service</module>
+        <module>cloudalibaba-provider-payment-ribbon</module>
+        <module>cloudalibaba-provider-payment-ribbon-two</module>
+        <module>cloudalibaba-consumer-nacos-order-two</module>
+        <module>cloudalibaba-consumer-nacos-order-ribbon</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->
