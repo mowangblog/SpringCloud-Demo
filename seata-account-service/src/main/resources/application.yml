@@ -1,0 +1,56 @@
+server:
+  port: 2003
+
+seata:
+  config:
+    type: nacos
+    nacos:
+      server-addr: "192.168.64.128:80"
+      group : "SEATA_GROUP"
+      namespace: ""
+      username: "nacos"
+      password: "nacos"
+  tx-service-group: mowang_tx_group
+spring:
+  application:
+    name: seata-account-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.64.128:80
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_account?serverTimezone=UTC&CharacterEncoding=utf-8
+    username: root
+    password: lixuan
+    druid:
+      aop-patterns: top.mowang.*  #监控SpringBean
+      filters: stat,wall     # 底层开启功能，stat（sql监控），wall（防火墙）
+      stat-view-servlet: # 配置监控页功能
+        enabled: true
+        login-username: admin
+        login-password: admin
+        resetEnable: false
+      web-stat-filter: # 监控web
+        enabled: true
+        urlPattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      filter:
+        stat: # 对上面filters里面的stat的详细配置
+          slow-sql-millis: 1000
+          logSlowSql: true
+          enabled: true
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+
+logging:
+  level:
+    io:
+      seata: info
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:top/mowang/cloud/mapper/xml/*.xml

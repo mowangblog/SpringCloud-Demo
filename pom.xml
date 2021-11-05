@@ -38,6 +38,9 @@
         <module>cloudalibaba-provider-payment-ribbon-two</module>
         <module>cloudalibaba-consumer-nacos-order-two</module>
         <module>cloudalibaba-consumer-nacos-order-ribbon</module>
+        <module>seata-order-service</module>
+        <module>seata-storage-service</module>
+        <module>seata-account-service</module>
     </modules>
     <packaging>pom</packaging>
     <!--统一管理jar包和版本-->
