@@ -39,9 +39,8 @@ public class TOrderServiceImpl extends ServiceImpl<TOrderMapper, TOrder> impleme
      */
     @Override
     //rollbackFor = Exception.class表示对任意异常都进行回滚
-    @GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class)
-    public void create(TOrder order)
-    {
+    @GlobalTransactional(name = "mowang-create-order",rollbackFor = Exception.class)
+    public void create(TOrder order) {
         log.info("----->开始新建订单");
         //1 新建订单
         orderDao.create(order);
@@ -62,7 +61,6 @@ public class TOrderServiceImpl extends ServiceImpl<TOrderMapper, TOrder> impleme
         log.info("----->修改订单状态结束");
 
         log.info("----->下订单结束了，O(∩_∩)O哈哈~");
-
     }
 }
 

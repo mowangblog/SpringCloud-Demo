@@ -1,20 +1,14 @@
 server:
   port: 2002
 
-seata:
-  config:
-    type: nacos
-    nacos:
-      server-addr: "192.168.64.128:80"
-      group : "SEATA_GROUP"
-      namespace: ""
-      username: "nacos"
-      password: "nacos"
-  tx-service-group: mowang_tx_group
 spring:
   application:
     name: seata-storage-service
   cloud:
+    alibaba:
+      seata:
+        #自定义事务组名称需要与seata-server中的对应
+        tx-service-group: fsp_tx_group
     nacos:
       discovery:
         server-addr: 192.168.64.128:80
